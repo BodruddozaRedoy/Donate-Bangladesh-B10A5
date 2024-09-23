@@ -22,21 +22,39 @@ historyBtnEl.addEventListener('click', function(){
     historyBtnEl.classList.remove("bg-transparent")
 })
 
-// document.getElementById("donate-now-btn").addEventListener('click', function (){
-//     calculateDonation('input-1')
-// })
+// Blog Button 
+document.getElementById('blog-btn').addEventListener('click', function(){
+    window.location.href = "/blog.html"
+})
+
+// Donate Now button 
+
 
 
 // common function of calculate donation 
 function calculateDonation (inputId, titleId, CardBalanceId){
+
     const inputIdEl =parseFloat(document.getElementById(inputId).value) 
     const titleIdEl = document.getElementById(titleId).innerText
     let CardBalanceIdEl = parseFloat(document.getElementById(CardBalanceId).innerText) 
+    const mainBalance = parseFloat(mainBalanceEl.innerText)
+
+
+    if(inputIdEl <= 0 || !inputIdEl){
+        alert("Please give valid amount")
+        return
+    }
+
+    if(mainBalance < inputIdEl){
+        alert("You don't have enough money to donate")
+        return
+    }
+    
 
     let totalCardBalance = CardBalanceIdEl + inputIdEl
     document.getElementById(CardBalanceId).innerText = totalCardBalance
     document.getElementById(inputId).value = ''
-    const mainBalance = parseFloat(mainBalanceEl.innerText)
+
     const mainBalanceTotal = mainBalance - inputIdEl
     mainBalanceEl.innerText = mainBalanceTotal
 
