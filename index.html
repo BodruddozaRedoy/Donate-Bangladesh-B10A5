@@ -10,7 +10,7 @@
     <!-- Css Link  -->
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body id="body" class="">
     <header id="navbar" class="fixed top-0 left-0 w-full z-1000 pb-5 backdrop-blur-[10px]">
         <!-- First Nav  -->
         <nav class="flex justify-between items-center py-5 px-[100px] bg-[f9f7f3]">
@@ -74,21 +74,9 @@
                     <h1 class="text-2xl font-bold">Aid for <span id="card-title-3">Injured in the Quota Movement</span></h1>
                     <p class="text-gray-500">The recent Quota movement has resulted in numerous injuries and significant hardship for many individuals. Your support is crucial in providing medical assistance, rehabilitation, and necessary supplies to those affected. By contributing, you help ensure that injured individuals receive the care and support they need during this challenging time. Every donation plays a vital role in alleviating their suffering and aiding in their recovery. Please consider making a donation to support these brave individuals in their time of need.</p>
                     <input id="input-3" class="border w-full p-4 rounded" type="text" placeholder="Write Donation Amount" name="" id="">
-                    <button onclick="calculateDonation('input-3', 'card-title-3', 'card-balance-3'); my_modal_5.showModal()" id="donate-now-btn" class="btn w-full bg-green-400 font-bold px-7 text-center">Donate Now</button>
-                    <!-- Open the modal using ID.showModal() method -->
-                    <!-- <button class="btn" onclick="my_modal_5.showModal()">open modal</button> -->
-                    <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
-                    <div class="modal-box">
-                        <h3 class="text-lg font-bold">Hello!</h3>
-                        <p class="py-4">Press ESC key or click the button below to close</p>
-                        <div class="modal-action">
-                        <form method="dialog">
-                            <!-- if there is a button in form, it will close the modal -->
-                            <button class="btn">Close</button>
-                        </form>
-                        </div>
-                    </div>
-                    </dialog>
+                    <button onclick=" calculateDonation('input-3', 'card-title-3', 'card-balance-3')" id="donate-now-btn" class="btn w-full bg-green-400 font-bold px-7 text-center">Donate Now</button>
+                    
+                    
                 </div>
             </section>
         </section>
@@ -97,6 +85,18 @@
         <section id="history-section"  class="hidden w-[70%] mx-auto space-y-5">
             
         </section>
+
+        <!-- Modal section  -->
+        <div id="modal-section" class="hidden flex-col items-center justify-center gap-5  rounded-lg w-[100vw] h-[100vh] mx-auto fixed z-[1000] top-0 left-0 backdrop-blur-sm">
+            <div class="flex flex-col items-center gap-5 bg-white rounded-lg justify-center py-5 px-10 opacity-100 z-[100000]">
+                <h1 class="text-3xl font-bold">Congrates!</h1>
+            <img src="assets/coin.png" alt="">
+            <p>You Have Donated for Humankind</p>
+            <h1 class="text-xl font-bold">Successfully</h1>
+            <button id="close-btn" class="btn">Close</button>
+            </div>
+            
+        </div>
         
     </main>
 

@@ -5,6 +5,8 @@ const historyBtnEl = document.getElementById('history-btn')
 const donationSectionEl = document.getElementById('donation-section')
 const historySectionEl = document.getElementById('history-section')
 const mainBalanceEl = document.getElementById('main-balance')
+let modalEl = document.getElementById('modal-section')
+const modalCloseBtn = document.getElementById('close-btn')
 
 // Donation Button 
 donationBtnEl.addEventListener('click', function(){
@@ -49,6 +51,7 @@ function calculateDonation (inputId, titleId, CardBalanceId){
         alert("You don't have enough money to donate")
         return
     }
+    // my_modal_5.showModal();
     
 
     let totalCardBalance = CardBalanceIdEl + inputIdEl
@@ -58,14 +61,28 @@ function calculateDonation (inputId, titleId, CardBalanceId){
     const mainBalanceTotal = mainBalance - inputIdEl
     mainBalanceEl.innerText = mainBalanceTotal
 
-    const historyAppend = historySectionEl.innerHTML += `
+    let historyAppend = historySectionEl.innerHTML += `
     <div class="border rounded p-5 ">
     <div class="text-2xl font-bold"><span>${inputIdEl}</span> Taka is donated for <span>${titleIdEl}</span></div>
     <div class="text-gray-400">Date: ${new Date()}</div>
     </div>
     `
     historyAppend ++
+
+    // Modal style 
+    modalShow()
 }
+
+// Modal function 
+function modalShow(){
+    modalEl.classList.remove('hidden')
+    modalEl.classList.add('flex')
+}
+
+modalCloseBtn.addEventListener('click',function(){
+    modalEl.classList.add('hidden')
+    modalEl.classList.remove('flex')
+})
 
 
 
