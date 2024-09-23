@@ -29,20 +29,27 @@ document.getElementById('blog-btn').addEventListener('click', function(){
     window.location.href = "/blog.html"
 })
 
-// Donate Now button 
+// common function for extract value
+function extractValue (inputId, titleId, CardBalanceId){
+    const inputIdValue = document.getElementById(inputId)
+    const inputIdEl =parseFloat(document.getElementById(inputId).value) 
+    const titleIdEl = document.getElementById(titleId).innerText
+    let cardBalanceIdEl = document.getElementById(CardBalanceId)
+    let cardBalanceIdElValue = parseFloat(cardBalanceIdEl.innerText)
+    const mainBalance = parseFloat(mainBalanceEl.innerText)
+
+    calculateDonation(inputIdValue, inputIdEl, titleIdEl, cardBalanceIdEl, mainBalance, cardBalanceIdEl, cardBalanceIdElValue)
+}
 
 
 
 // common function of calculate donation 
-function calculateDonation (inputId, titleId, CardBalanceId){
+function calculateDonation (inputIdValue, inputIdEl, titleIdEl, CardBalanceIdEl, mainBalance,cardBalanceIdEl, cardBalanceIdElValue){
 
-    const inputIdEl =parseFloat(document.getElementById(inputId).value) 
-    const titleIdEl = document.getElementById(titleId).innerText
-    let CardBalanceIdEl = parseFloat(document.getElementById(CardBalanceId).innerText) 
-    const mainBalance = parseFloat(mainBalanceEl.innerText)
+    
 
 
-    if(inputIdEl <= 0 || !inputIdEl){
+    if(inputIdEl <= 0 || !inputIdEl || typeof inputIdEl !== 'number' ){
         alert("Please give valid amount")
         return
     }
@@ -51,23 +58,25 @@ function calculateDonation (inputId, titleId, CardBalanceId){
         alert("You don't have enough money to donate")
         return
     }
-    // my_modal_5.showModal();
     
 
-    let totalCardBalance = CardBalanceIdEl + inputIdEl
-    document.getElementById(CardBalanceId).innerText = totalCardBalance
-    document.getElementById(inputId).value = ''
+    let totalCardBalance = cardBalanceIdElValue + inputIdEl
+
+    cardBalanceIdEl.innerText = totalCardBalance
+    inputIdValue.value = ""
+    
+
+    
 
     const mainBalanceTotal = mainBalance - inputIdEl
     mainBalanceEl.innerText = mainBalanceTotal
 
-    let historyAppend = historySectionEl.innerHTML += `
+    historySectionEl.innerHTML += `
     <div class="border rounded p-5 ">
     <div class="text-2xl font-bold"><span>${inputIdEl}</span> Taka is donated for <span>${titleIdEl}</span></div>
     <div class="text-gray-400">Date: ${new Date()}</div>
     </div>
     `
-    historyAppend ++
 
     // Modal style 
     modalShow()
