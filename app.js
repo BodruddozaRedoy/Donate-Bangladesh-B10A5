@@ -25,13 +25,13 @@ historyBtnEl.addEventListener('click', function(){
 })
 
 // Blog Button 
-document.getElementById('blog-btn').addEventListener('click', function(){
+document.getElementById('blog-btn')?.addEventListener('click', function(){
     window.location.href = "./blog.html"
 })
 
 // Home btn
-document.getElementById('home-btn').addEventListener('click', function(){
-    window.location.href = "./"
+document.getElementById('home-btn')?.addEventListener('click', function(){
+    window.location.href = "./index.html"
 })
 
 // common function for extract value
