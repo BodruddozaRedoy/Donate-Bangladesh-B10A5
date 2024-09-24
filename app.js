@@ -9,19 +9,19 @@ let modalEl = document.getElementById('modal-section')
 const modalCloseBtn = document.getElementById('close-btn')
 
 // Donation Button 
-donationBtnEl.addEventListener('click', function(){
-    historySectionEl.classList.add("hidden")
-    donationSectionEl.classList.remove("hidden")
-    historyBtnEl.classList.add("bg-transparent")
-    donationBtnEl.classList.remove("bg-transparent")
+donationBtnEl?.addEventListener('click', function(){
+    historySectionEl?.classList.add("hidden")
+    donationSectionEl?.classList.remove("hidden")
+    historyBtnEl?.classList.add("bg-transparent")
+    donationBtnEl?.classList.remove("bg-transparent")
 })
 
 // History button 
-historyBtnEl.addEventListener('click', function(){
-    donationSectionEl.classList.add("hidden")
-    historySectionEl.classList.remove("hidden")
-    donationBtnEl.classList.add("bg-transparent")
-    historyBtnEl.classList.remove("bg-transparent")
+historyBtnEl?.addEventListener('click', function(){
+    donationSectionEl?.classList.add("hidden")
+    historySectionEl?.classList.remove("hidden")
+    donationBtnEl?.classList.add("bg-transparent")
+    historyBtnEl?.classList.remove("bg-transparent")
 })
 
 // Blog Button 
@@ -93,7 +93,7 @@ function modalShow(){
     modalEl.classList.add('flex')
 }
 
-modalCloseBtn.addEventListener('click',function(){
+modalCloseBtn?.addEventListener('click',function(){
     modalEl.classList.add('hidden')
     modalEl.classList.remove('flex')
 })
