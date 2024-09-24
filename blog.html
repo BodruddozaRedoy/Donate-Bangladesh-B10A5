@@ -15,7 +15,7 @@
     <header id="navbar" class="fixed top-0 left-0 w-full z-1000 pb-5 backdrop-blur-[10px]">
         <!-- First Nav  -->
         <nav class="flex justify-between items-center py-5 px-[100px] bg-[f9f7f3]">
-            <button id="blog-btn" class="btn bg-green-400 font-bold px-7 text-center">Blog</button>
+            <button id="home-btn" class="btn bg-green-400 font-bold px-7 text-center">Home</button>
             <div class="flex gap-5 items-center">
                 <img src="assets/logo.png" alt="">
                 <h1 class="font-bold">Donate Bangladesh</h1>
@@ -34,13 +34,14 @@
     </header>
 
     <section class="mt-[300px] w-[50%] mx-auto space-y-5">
-        <details class="collapse bg-base-200">
+      <h1 class="text-4xl font-bold">Important FAQ</h1>
+        <details class="collapse bg-base-200 shadow-md">
             <summary class="collapse-title text-xl font-medium">What is the Document Object Model (DOM)?</summary>
             <div class="collapse-content">
               <p>The Document Object Model (DOM) is a programming interface for web documents. It represents the structure of an HTML or XML document as a tree of objects, where each element in the document (such as headings, paragraphs, or images) becomes a node within that tree. </p>
             </div>
           </details>
-        <details class="collapse bg-base-200">
+        <details class="collapse bg-base-200 shadow-md">
             <summary class="collapse-title text-xl font-medium">How do you select an element from the DOM?
             </summary>
             <div class="collapse-content">
@@ -54,14 +55,14 @@ getElementsByName selects all elements with a specific name attribute and return
               </p>
             </div>
           </details>
-        <details class="collapse bg-base-200">
+        <details class="collapse bg-base-200 shadow-md">
             <summary class="collapse-title text-xl font-medium">What is event delegation in the context of the DOM, and why is it useful?
             </summary>
             <div class="collapse-content">
               <p>Event delegation is a technique in the DOM where instead of attaching event listeners to individual child elements, you attach a single event listener to a parent element. The parent listens for events triggered by its children and handles them using a process called event bubbling, where events triggered on a child element propagate (or "bubble up") to its ancestors.</p>
             </div>
           </details>
-        <details class="collapse bg-base-200">
+        <details class="collapse bg-base-200 shadow-md">
             <summary class="collapse-title text-xl font-medium">How do you manipulate an element's attributes and styles using the DOM?
             </summary>
             <div class="collapse-content">
